@@ -1,0 +1,73 @@
+
+.websvg-canvas {
+	display: block;
+	width: 800px;
+	height: 600px;
+}
+
+
+.websvg-element {
+	fill: none;
+}
+
+
+/* <stroke-color> */
+.websvg-stroke-color-red {
+    stroke: red;
+}
+
+.websvg-stroke-color-blue {
+    stroke: blue;
+}
+
+.websvg-stroke-color-green {
+    stroke: green;
+}
+
+.websvg-stroke-color-grey {
+    stroke: rgb(128, 128, 128);
+}
+
+.websvg-stroke-color-black {
+    stroke: black;
+}
+/* </stroke-color> */
+
+
+/* <stroke-solidity> */
+.websvg-stroke-solidity-solid {
+    stroke-dasharray: none;
+	fill: none;
+}
+
+.websvg-stroke-solidity-small-dash {
+	stroke-dasharray: 3, 2;
+	fill: none;
+}
+
+.websvg-stroke-solidity-long-dash {
+	stroke-dasharray: 5, 2;
+	fill: none;
+}
+/* </stroke-solidity> */
+
+
+/* <stroke-thickness> */
+.websvg-stroke-thickness-thin {
+    stroke-width: 0.5px;
+}
+
+.websvg-stroke-thickness-normal {
+	stroke-width: 1px;
+}
+
+.websvg-stroke-thickness-thick {
+	stroke-width: 2px;
+}
+
+.websvg-stroke-thickness-highligthed {
+	stroke-width: 4px;
+}
+
+/* </stroke-thickness> */
+
