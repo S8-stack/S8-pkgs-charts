@@ -3,7 +3,7 @@
 import { S8WebFront } from "/S8-pkgs-ui-carbide/S8WebFront.js";
 
 import { WebSVG_Element } from "/S8-pkgs-ui-websvg/WebSVG_Element.js";
-import { WebSVG_ViewPort } from "/S8-pkgs-ui-websvg/WebSVG.js";
+import { WebSVG_ViewPort } from "../C2dChart.js";
 
 
 

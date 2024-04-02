@@ -4,7 +4,7 @@ import { NeObject } from "/S8-core-bohr-neon/NeObject.js";
 
 import { S8WebFront } from "/S8-pkgs-ui-carbide/S8WebFront.js";
 
-import { WebSVG } from "/S8-pkgs-ui-websvg/WebSVG.js";
+import { WebSVG } from "./C2dChart.js";
 import { WebSVG_Canvas } from "/S8-pkgs-ui-websvg/WebSVG_Canvas.js";
 
 

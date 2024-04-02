@@ -7,7 +7,7 @@
       "/S8-core-bohr-atom/*": [ "../../../S8-core-bohr-atom/web-sources/S8-core-bohr-atom/*" ],
       "/S8-core-bohr-neon/*": [ "../../../S8-core-bohr-neon/web-sources/S8-core-bohr-neon/*" ],
       "/S8-pkgs-ui-carbide/*": [ "../../../S8-pkgs-ui-carbide/web-sources/S8-pkgs-ui-carbide/*" ],
-      "/S8-pkgs-ui-websvg/*": [ "./*" ]
+      "/S8-pkgs-charts/*": [ "./*" ]
     }
   }
 }

@@ -1,0 +1,140 @@
+
+
+
+/** */
+.c2dgrid-wrapper {
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	padding: 36px 15% 10% 15%;
+	background-color: white;
+	overflow-y: scroll;
+}
+
+.c2dgrid-core {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+
+.c2dgrid-card-wrapper {
+	box-sizing: content-box;
+	position: relative;
+	padding: 14px;
+	/* z-index: 32; */
+}
+
+.c2dgrid-card-shape {
+	box-sizing: content-box;
+   
+}
+
+/* all cards */
+
+.c2dgrid-card-create, .c2dgrid-card-access {
+	height: 240px;
+    width: 172px;
+	border-radius: 16px;
+    box-shadow: 0px 0px 4px rgb(172, 172, 172);
+	cursor: pointer;
+}
+
+
+/* <create-card> */
+
+.c2dgrid-card-create {
+	border-radius: 24px;
+    border: 8px dashed rgb(204, 204, 204);
+    background-color: white;
+    overflow: hidden;
+	color: rgb(200, 200, 200);
+}
+
+.c2dgrid-card-create:hover {
+    border-color: aqua;
+}
+
+.c2dgrid-card-create-header {
+	font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 128px;
+    font-weight: bold;
+    letter-spacing: -0.016em;
+  	text-align: center;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	color: rgb(200, 200, 200);
+}
+
+.c2dgrid-card-create-body {
+	font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.016em;
+  	text-align: center;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	color: rgb(200, 200, 200);
+}
+
+/* <create-card> */
+
+
+
+/* <repository-card> */
+
+.c2dgrid-card-access {
+	border: 1px solid rgb(182, 182, 182);
+	background-color:  white;
+	overflow: hidden;
+}
+
+.c2dgrid-card-access:hover{
+	outline: 8px solid rgb(203 223 255);
+}
+
+.c2dgrid-card-access[selected]{
+	border: 2px solid #769ff4;
+	box-shadow: 0px 0px 4px rgb(103, 143, 167);
+}
+
+
+.c2dgrid-card-access-image {
+	height: 128px;
+	width: 100%;
+	background-image: url("/S8-pkgs-ui-carbide/collections/grids/pics/turbine-pic.png");
+	background-size: cover;
+	border-bottom: 1px solid rgb(182, 182, 182);
+}
+
+
+.c2dgrid-card-access-title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.016em;
+  	text-align: left;
+	margin: 6px 8px 0px 8px;
+	max-height: 32px;
+}
+
+.c2dgrid-card-access-info {
+	font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.016em;
+  	text-align: left;
+	height: 32px;
+	margin: 6px 8px 12px 8px;
+	text-overflow: ellipsis;
+}
+
+
+.c2dgrid-card-access-popover-root {
+	height: 16px;
+	width: 16px;
+	position: relative;
+	margin-left: 72px;
+}
+
+/* </repository-card> */

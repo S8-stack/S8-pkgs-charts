@@ -1,29 +1,64 @@
 
 
 
+.c2d-ts {
+	width: 320px;
+    height: 240px;
+	background-color: white;
+}
 
-.c2d-timeseries-taxis > line {
+
+
+.c2d-ts-t-line {
+	fill: none;
+	stroke: rgb(46, 46, 46);
+	stroke-width: 1.75px;
+}
+
+
+.c2d-ts-t-tick {
 	fill: none;
 	stroke: grey;
 	stroke-width: 0.75px;
 }
 
-.c2d-timeseries-taxis > text {
+.c2d-ts-t-text {
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-	font-size: 12px;
+	font-size: 16px;
 	font-weight: normal;
+	text-anchor: middle;
 }
 
 
-.c2d-timeseries-vaxis > line {
+.c2d-ts-v-tick {
 	fill: none;
 	stroke: grey;
 	stroke-width: 0.75px;
 }
 
+.c2d-ts-v-line {
+	fill: none;
+	stroke: rgba(128, 128, 128, 0.673);
+	stroke-width: 0.5px;
+}
 
-.c2d-timeseries-vaxis > text {
+
+.c2d-ts-v-text {
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: normal;
+	alignment-baseline: middle;
+}
+
+
+.c2d-ts-polygon {
+	stroke: none;
+	fill: #a4c9eb;
+}
+
+.c2d-ts-polyline {
+	stroke: blue;
+	stroke-width: 2px;
+	stroke-linejoin: bevel;
+	fill: none;
 }
