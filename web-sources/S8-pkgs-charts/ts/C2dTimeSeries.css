@@ -1,0 +1,29 @@
+
+
+
+
+.c2d-timeseries-taxis > line {
+	fill: none;
+	stroke: grey;
+	stroke-width: 0.75px;
+}
+
+.c2d-timeseries-taxis > text {
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+	font-size: 12px;
+	font-weight: normal;
+}
+
+
+.c2d-timeseries-vaxis > line {
+	fill: none;
+	stroke: grey;
+	stroke-width: 0.75px;
+}
+
+
+.c2d-timeseries-vaxis > text {
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+	font-size: 14px;
+	font-weight: normal;
+}
