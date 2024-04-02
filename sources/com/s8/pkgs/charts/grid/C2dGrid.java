@@ -20,7 +20,7 @@ public class C2dGrid extends S8WebObject {
 	
 	public final static String ROOT_WEBPATH = WebSources.WEBPATH + "/grid";
 	
-	private List<StdGridCard> cards = new ArrayList<>();
+	private List<C2dGridCard> cards = new ArrayList<>();
 
 	public C2dGrid(S8WebFront branch) {
 		super(branch, ROOT_WEBPATH + "/C2dGrid");
@@ -33,7 +33,7 @@ public class C2dGrid extends S8WebObject {
 
 
 
-	public void setCards(List<StdGridCard> cards) {
+	public void setCards(List<C2dGridCard> cards) {
 		this.cards = cards;
 		vertex.outbound().setObjectListField("cards", this.cards);
 	}
@@ -43,13 +43,13 @@ public class C2dGrid extends S8WebObject {
 	 * 
 	 * @return
 	 */
-	public List<StdGridCard> getCards(){
+	public List<C2dGridCard> getCards(){
 		return cards;
 	}
 
 
 	public void unselectAllCards() {
-		List<StdGridCard> cards = getCards();
+		List<C2dGridCard> cards = getCards();
 		if(cards != null) {
 			cards.forEach(card -> {
 				card.clearPopover();

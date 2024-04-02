@@ -36,15 +36,13 @@ export class C2dTimeSeries extends NeObject {
     /** @type{number[]} */
     values;
 
+    marginTop = 2;
 
+    marginRight = 2;
 
-    marginTop = 8;
+    marginBottom = 2;
 
-    marginRight = 8;
-
-    marginBottom = 8;
-
-    marginLeft = 8;
+    marginLeft = 2;
 
 
     /**
@@ -69,6 +67,9 @@ export class C2dTimeSeries extends NeObject {
         this.SVG_wrapperNode.appendChild(this.drawingZone.groupNode);
         this.SVG_wrapperNode.appendChild(this.valueAxis.groupNode);
         this.SVG_wrapperNode.appendChild(this.timeAxis.groupNode);
+
+
+        this.S8_set_values([0, 1, 2, 3, 4]);
     }
 
     onChanged() {
@@ -117,6 +118,9 @@ export class C2dTimeSeries extends NeObject {
             const n = values.length;
             for (let i = 1; i < n; i++) {
                 value = values[i];
+                if(isNaN(value) || !isFinite(value)){
+                    throw "Wrong values";
+                }
                 vmin = Math.min(vmin, value);
                 vmax = Math.max(vmax, value);
             }
@@ -272,8 +276,6 @@ class DrawingZone extends Group {
 
 
 class TimeAxis extends Group {
-
-
 
     /** @type{ number } */
     t0 = 0.0;
@@ -479,8 +481,14 @@ export class ValueAxis extends Group {
     }
 
     update() {
-        const interval = this.vMax - this.vMin;
+        let interval = this.vMax - this.vMin;
 
+        if(interval < 1e-9){
+            const vMid = 0.5 * (this.vMax + this.vMin);
+            this.vMin = vMid - 1.0
+            this.vMax = vMid + 1.0;
+            interval = this.vMax - this.vMin;
+        }
 
         const targetTickDv = interval / this.nTicks;
         console.log(targetTickDv);
@@ -507,6 +515,7 @@ export class ValueAxis extends Group {
         this.v0 = this.i0 * this.dv;
 
         this.i1 = Math.ceil(this.vMax / this.dv);
+        if(this.i1 == this.i0){ this.i1++; }
         this.v1 = this.i1 * this.dv;
 
         this.vScalingFactor = this.chart.drawingHeight / (this.v1 - this.v0);

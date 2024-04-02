@@ -5,7 +5,7 @@ import { NeObject } from "/S8-core-bohr-neon/NeObject.js";
 
 
 
-export class C2dGridChart extends NeObject {
+export class C2dGridCard extends NeObject {
 
 
 
@@ -18,33 +18,21 @@ export class C2dGridChart extends NeObject {
     constructor(){
         super();
 
-        this.wrapperNode = document.createElement("div");
-        this.wrapperNode.classList.add("stdgrid-card-wrapper");
-
         this.cardNode = document.createElement("div");
-        this.cardNode.classList.add("stdgrid-card-shape");
-        this.wrapperNode.appendChild(this.cardNode);
-
-        this.containerNode = document.createElement("div");
-        this.containerNode.classList.add("stdgrid-card-access");
-     
-        this.picNode = document.createElement("div");
-        this.picNode.classList.add("stdgrid-card-access-image");
-        this.containerNode.appendChild(this.picNode);
-
-        this.legendNode = document.createElement("div");
-        this.legendNode.classList.add("stdgrid-card-access-title");
-        this.containerNode.appendChild(this.legendNode);
+        this.cardNode.classList.add("c2dgrid-card");
 
         this.chartNode = document.createElement("div");
-        this.chartNode.classList.add("stdgrid-card-access-info");
-        this.containerNode.appendChild(this.chartNode);
+        this.chartNode.classList.add("c2dgrid-card-chart");
+        this.cardNode.appendChild(this.chartNode);
 
-        this.cardNode.appendChild(this.containerNode);
+        this.legendNode = document.createElement("div");
+        this.legendNode.classList.add("c2dgrid-card-legend");
+        this.cardNode.appendChild(this.legendNode);
+
 
         let _this = this;
         this.isPopoverAttached = false;
-        this.containerNode.addEventListener("click", function (event) {
+        this.cardNode.addEventListener("click", function (event) {
             _this.S8_vertex.runVoid("on-click");
             event.stopPropagation();
         }, false);
@@ -52,7 +40,7 @@ export class C2dGridChart extends NeObject {
     }
 
     getEnvelope() {
-        return this.wrapperNode;
+        return this.cardNode;
     }
 
 
@@ -88,17 +76,6 @@ export class C2dGridChart extends NeObject {
     }
 
 
-
-   
-
-    /**
-     * 
-     * @param {string} legend 
-     */
-    S8_set_legent(name) {
-        this.legendNode.innerHTML = name;
-    }
-
     /**
     * 
     * @param {string} cards 
@@ -107,6 +84,17 @@ export class C2dGridChart extends NeObject {
         while(this.chartNode.firstChild) { this.chartNode.removeChild(this.chartNode.lastChild); }
         this.chartNode.appendChild(chart.getEnvelope());
     }
+
+   
+
+    /**
+     * 
+     * @param {string} legend 
+     */
+    S8_set_legend(name) {
+        this.legendNode.innerHTML = name;
+    }
+
 
 
     /**

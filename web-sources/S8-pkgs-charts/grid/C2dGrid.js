@@ -4,7 +4,7 @@ import { NeObject } from '/S8-core-bohr-neon/NeObject.js';
 
 import { S8WebFront } from '/S8-pkgs-ui-carbide/S8WebFront.js';
 
-import { C2dGridChart } from './C2dGridChart.js';
+import { C2dGridCard } from './C2dGridCard.js';
 
 
 
@@ -40,7 +40,7 @@ export class C2dGrid extends NeObject {
 
     /**
      * 
-     * @param {C2dGridChart[]} cards 
+     * @param {C2dGridCard[]} cards 
      */
     S8_set_cards(cards){
 

@@ -1,11 +1,10 @@
 package com.s8.pkgs.charts.ts;
 
 import com.s8.api.web.S8WebFront;
+import com.s8.pkgs.charts.C2dChart;
 import com.s8.pkgs.charts.C2dNumberFormat;
-import com.s8.pkgs.charts.C8Chart;
-import com.s8.pkgs.charts.WebSources;
 
-public class C2dTimeSeries extends C8Chart {
+public class C2dTimeSeries extends C2dChart {
 
 	
 	/**
@@ -13,7 +12,7 @@ public class C2dTimeSeries extends C8Chart {
 	 * @param front
 	 */
 	public C2dTimeSeries(S8WebFront front) {
-		super(front, WebSources.WEBPATH + "/ts/C2dTimeSeries");
+		super(front, "/ts/C2dTimeSeries");
 	}
 	
 	
@@ -101,10 +100,44 @@ public class C2dTimeSeries extends C8Chart {
 		int n = values.length;
 		float[] fValues = new float[n];
 		for(int i = 0; i<n; i++) { fValues[i] = (float) values[i]; }
-		vertex.outbound().setFloat32ArrayField("values", fValues);
+		setValues(fValues);
+	}
+	
+	
+	/**
+	 * 
+	 * @param values
+	 */
+	public void setValues(float[] values) {
+		vertex.outbound().setFloat32ArrayField("values", values);
 	}
 	
 
+	
+
+	/**
+	 * 
+	 * @param size
+	 */
+	public void setMargins(double size) {
+		setMarginTop(size);
+		setMarginRight(size);
+		setMarginBottom(size);
+		setMarginLeft(size);
+	}
+	
+	
+	/**
+	 * 
+	 * @param size
+	 */
+	public void setMargins(double top, double right, double bottom, double left) {
+		setMarginTop(top);
+		setMarginRight(right);
+		setMarginBottom(bottom);
+		setMarginLeft(left);
+	}
+	
 	
 	/**
 	 * 
