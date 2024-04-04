@@ -1,4 +1,4 @@
-package com.s8.pkgs.charts.grid;
+package com.s8.pkgs.charts.grids.t1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,26 +14,33 @@ import com.s8.pkgs.charts.WebSources;
  * @author pierreconvert
  *
  */
-public class C2dGrid extends S8WebObject {
+public class T1Grid extends S8WebObject {
 
 	
 	
-	public final static String ROOT_WEBPATH = WebSources.WEBPATH + "/grid";
-	
-	private List<C2dGridCard> cards = new ArrayList<>();
+	private List<T1GridCard> cards = new ArrayList<>();
 
-	public C2dGrid(S8WebFront branch) {
-		super(branch, ROOT_WEBPATH + "/C2dGrid");
+	
+	/**
+	 * 
+	 * @param branch
+	 */
+	public T1Grid(S8WebFront branch) {
+		super(branch, WebSources.WEBPATH + "/grids/t1/T1Grid");
 		onClickLambda(() -> unselectAllCards());
 	}
 
 
 
+	
+	public void setUpToDate(boolean isUpToDate) {
+		vertex.outbound().setBool8Field("isUpToDate", isUpToDate);
+	}
 
 
 
 
-	public void setCards(List<C2dGridCard> cards) {
+	public void setCards(List<T1GridCard> cards) {
 		this.cards = cards;
 		vertex.outbound().setObjectListField("cards", this.cards);
 	}
@@ -43,13 +50,13 @@ public class C2dGrid extends S8WebObject {
 	 * 
 	 * @return
 	 */
-	public List<C2dGridCard> getCards(){
+	public List<T1GridCard> getCards(){
 		return cards;
 	}
 
 
 	public void unselectAllCards() {
-		List<C2dGridCard> cards = getCards();
+		List<T1GridCard> cards = getCards();
 		if(cards != null) {
 			cards.forEach(card -> {
 				card.clearPopover();
@@ -75,6 +82,25 @@ public class C2dGrid extends S8WebObject {
 	 */
 	public void onClickLambda(VoidLambda lambda) {
 		vertex.inbound().setVoidMethodLambda("on-click", lambda);
+	}
+
+	
+	/**
+	 * 
+	 * @param func
+	 */
+	public void onSync(VoidNeFunction func) {
+		vertex.inbound().setVoidMethod("on-sync", func);
+	}
+
+
+
+	/**
+	 * 
+	 * @param func
+	 */
+	public void onSync(VoidLambda lambda) {
+		vertex.inbound().setVoidMethodLambda("on-sync", lambda);
 	}
 
 }

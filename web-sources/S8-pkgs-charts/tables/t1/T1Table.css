@@ -1,0 +1,52 @@
+/** */
+.t1table-wrapper {
+	width: 100%;
+	/*padding: 16px 24px 16px 24px;*/
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+}
+
+
+.t1table {
+	font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+	border-collapse: collapse;
+}
+
+.t1table>thead>tr {
+	font-size: 14px;
+	font-weight: normal;
+	color: rgb(160, 160, 160);
+	text-align: left;
+	background-color: rgb(237 238 238);
+	border-bottom: 0.5px solid rgba(128, 128, 128, 0.2);
+	text-align: left;
+}
+
+
+.t1table>tbody>tr {
+	border-bottom: 0.5px solid rgba(128, 128, 128, 0.2);
+}
+
+.t1table-row-name {
+	font-size: 14px;
+	font-weight: normal;
+	color: rgb(72, 72, 72);
+	text-align: left;
+}
+
+.t1table-row-value {
+	font-size: 15px;
+	font-weight: bold;
+	color: black;
+	padding: 4px 2px 2px 24px;
+	text-align: right;
+}
+
+.t1table-row-unit {
+	font-size: 14px;
+	font-weight: normal;
+	color: grey;
+	padding: 4px 2px 2px 6px;
+	text-align: left;
+}

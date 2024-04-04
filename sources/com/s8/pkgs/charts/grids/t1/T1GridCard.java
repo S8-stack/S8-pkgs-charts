@@ -1,4 +1,4 @@
-package com.s8.pkgs.charts.grid;
+package com.s8.pkgs.charts.grids.t1;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebObject;
@@ -13,23 +13,23 @@ import com.s8.pkgs.charts.WebSources;
  * @author pierreconvert
  *
  */
-public class C2dGridCard extends S8WebObject {
+public class T1GridCard extends S8WebObject {
 
 	
-	public static C2dGridCard create(S8WebFront branch, String legend, C2dChart chart) {
-		C2dGridCard card = new C2dGridCard(branch);
+	public static T1GridCard create(S8WebFront front, String legend, C2dChart chart) {
+		T1GridCard card = new T1GridCard(front);
 		card.setLegend(legend);
-		card.setChart(chart);
+		card.setContent(chart);
 		return card;
 	}
 	
 	/**
 	 * 
-	 * @param branch
+	 * @param front
 	 * @param typeName
 	 */
-	public C2dGridCard(S8WebFront branch) {
-		super(branch, WebSources.WEBPATH + "/grid/C2dGridCard");
+	public T1GridCard(S8WebFront front) {
+		super(front, WebSources.WEBPATH + "/grids/t1/T1GridCard");
 	}
 
 	
@@ -84,8 +84,8 @@ public class C2dGridCard extends S8WebObject {
 	 * 
 	 * @param value
 	 */
-	public void setChart(C2dChart chart) {
-		vertex.outbound().setObjectField("chart", chart);
+	public void setContent(C2dChart content) {
+		vertex.outbound().setObjectField("content", content);
 	}
 	
 	

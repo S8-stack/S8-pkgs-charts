@@ -1,0 +1,120 @@
+
+
+
+/** */
+.t1grid-wrapper {
+	width: 100%;
+	padding: 16px 24px 16px 24px;
+	position: relative;
+}
+
+.t1grid-core {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+
+
+.t1grid-card-wrapper {
+	box-sizing: content-box;
+	position: relative;
+	padding: 14px;
+	/* z-index: 32; */
+}
+
+.t1grid-card-shape {
+	box-sizing: content-box;
+   
+}
+
+
+
+/* <card> */
+
+.t1grid-card {
+	padding: 0px;
+	margin: 8px;
+}
+
+
+.t1grid-card-legend {
+	color: rgb(0, 0, 76);
+	font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.016em;
+  	text-align: center;
+	margin: 4px 8px 8px 8px;
+	max-height: 32px;
+	text-overflow: ellipsis;
+}
+
+.t1grid-card-chart {
+	font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+    font-weight: 400;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+
+/* </card> */
+
+
+
+
+/* <overlay> */
+
+
+.t1grid-overlay {
+    position: absolute;
+	top: 0px;
+	left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(188, 188, 188, 0.64);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.t1grid-overlay > svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	fill: lime;
+    filter: drop-shadow(0px 0px 8px rgba(128, 128, 128, 0.36));
+}
+
+.t1grid-overlay[up-to-date="false"] {
+   visibility: visible;
+}
+
+
+.t1grid-overlay[up-to-date="false"]:hover > svg {
+	fill: rgb(72, 255, 72);
+}
+
+.t1grid-overlay[up-to-date="true"] {
+    visibility: hidden;
+}
+
+
+@keyframes rotating {
+	from {
+	  transform: translate(-50%, -50%) rotate(0deg);
+	}
+	to {
+	  transform:  translate(-50%, -50%) rotate(360deg);
+	}
+  }
+
+.t1grid-overlay[up-to-date="syncing"] > svg {
+	visibility: visible;
+	animation: rotating 2s linear infinite;
+	fill: yellow;
+}
+
+ /* </overlay> */
