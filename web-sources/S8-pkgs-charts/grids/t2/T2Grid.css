@@ -112,8 +112,8 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	fill: lime;
-	filter: drop-shadow(0px 0px 8px rgba(128, 128, 128, 0.36));
+	fill: rgb(151, 255, 151);
+	filter: drop-shadow(0px 0px 8px rgba(128, 128, 128, 0.92));
 }
 
 .t2grid-overlay[up-to-date="false"] {
@@ -122,7 +122,7 @@
 
 
 .t2grid-overlay[up-to-date="false"]:hover>svg {
-	fill: rgb(72, 255, 72);
+	fill: lime;
 }
 
 .t2grid-overlay[up-to-date="true"] {
