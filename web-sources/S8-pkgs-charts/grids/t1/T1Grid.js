@@ -3,6 +3,7 @@ import { S8Object } from '/S8-api/S8Object.js';
 import { S8WebFront } from '/S8-pkgs-ui-carbide/S8WebFront.js';
 
 import { T1GridCard } from './T1GridCard.js';
+import { OutputOverlay } from '/S8-pkgs-charts/overlay/OutputOverlay.js';
 
 
 
@@ -16,9 +17,9 @@ export class T1Grid extends S8Object {
 
 
     /**
-     * @type{HTMLDivElement}
+     * @type{OutputOverlay}
      */
-    upToDateOverlayNode;
+    outputOverlay;
 
     constructor(){
         super();
@@ -38,21 +39,11 @@ export class T1Grid extends S8Object {
         }, false);
 
 
-        /* <uptodate-overlay> */
-        this.upToDateOverlayNode = document.createElement("div");
-        this.upToDateOverlayNode.classList.add("t1grid-overlay");
-        this.upToDateOverlayNode.setAttribute("up-to-date", "true");
-        this.isUpToDate = true;
-        S8WebFront.SVG_insertByName(this.upToDateOverlayNode, "octicons/sync.svg", 64, 64);
-
-        this.upToDateOverlayNode.addEventListener("click", function (event) {
-            event.stopPropagation();
-            _this.upToDateOverlayNode.setAttribute("up-to-date", "syncing");
-            _this.onSync();
-        });
-        this.wrapperNode.appendChild(this.upToDateOverlayNode);
-
-        /* </uptodate-overlay> */
+      /* <uptodate-overlay> */
+      this.outputOverlay = new OutputOverlay(this);
+      this.wrapperNode.appendChild(this.outputOverlay.getLayerNode());
+      /* </uptodate-overlay> */
+      
     }
 
     S8_render(){ /* continuous rendering approach... */ }
@@ -83,10 +74,14 @@ export class T1Grid extends S8Object {
 
 
 
-    S8_set_isUpToDate(state) {
-        this.upToDateOverlayNode.setAttribute("up-to-date", state ? "true" : "false");
+    S8_set_overlayState(code) {
+        this.outputOverlay.setState(code);
     }
 
+    S8_set_overlayMessage(message) {
+        this.outputOverlay.setMessage(message);
+    }
+    
 
     S8_dispose(){ /* continuous rendering approach... */ }
 }

@@ -32,10 +32,24 @@ public class T2Grid extends S8WebObject {
 
 
 
-	
-	public void setUpToDate(boolean isUpToDate) {
-		vertex.outbound().setBool8Field("isUpToDate", isUpToDate);
+	/**
+	 * 
+	 * O: out-of-sync, 
+	 * 1: syncing, 
+	 * 2: synced,
+	 * 3: failed
+	 * 
+	 * @param code
+	 */
+	public void setOverlayState(int code) {
+		vertex.outbound().setUInt8Field("overlayState", code);
 	}
+	
+	
+	public void setOverlayMessage(String message) {
+		vertex.outbound().setStringUTF8Field("overlayMessage", message);
+	}
+	
 
 
 
